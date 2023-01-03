@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\TeamController;
+//  use Illuminate\Http\Request;
+// use App\Models\Team;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/team', TeamController::class);
+// route::get('/search',[TeamController::class,'search']);
+Route::get('/search',[TeamController::class,'search']);
+

@@ -23,10 +23,11 @@ class TeamController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+      $request->validate([
             'name_team'=>'required',
             'number_mailer'=>'required'
         ]);
+
         $input = $request->all();
         Team::create($input);
         return redirect('team')->with('flash_message', 'Team Addedd!');
@@ -60,5 +61,10 @@ class TeamController extends Controller
     {
         Team::destroy($id);
         return redirect('team')->with('flash_message', 'team deleted!');
+    }
+    
+    public function search(Request $request) {
+       $teams= (Team::where('name_team', 'LIKE',"%{$request->search}%"))->paginate();;
+       return view('teams.index',compact('teams'));
     }
 }

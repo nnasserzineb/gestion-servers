@@ -5,6 +5,12 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Teams</div>
+                    <form action="{{ url('/search') }}" method="GET">
+                        <div class="search">
+                            <input type="search" name="search" id="search" placeholder="search here .." class="form-controll">
+                              <button class="btn btn-primary">search</button>
+                         </div>
+                    </form>
                     <div class="card-body">
                         <a href="{{ url('/team/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
@@ -21,7 +27,7 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                {{-- <tbody id="content"> --}}
                                 @foreach($teams as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
@@ -48,4 +54,20 @@
             </div>
         </div>
     </div>
+    {{-- <script type="text/javascript">
+     $('#search').on('keyup',function(){
+       $value=$(this).val();
+       $.ajax({
+          type:'get',
+          url:'{{ URL::to('search') }}',
+          data:{'search:$value'},
+          success:function(data)
+          {
+             console.log(data);
+             $('#content').html(data);
+          }
+       });
+     })
+
+    </script> --}}
 @endsection
