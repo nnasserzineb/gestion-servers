@@ -1,5 +1,6 @@
 @extends('teams.layout')
 @section('content')
+</br></br></br></br></br></br>
 <div class="card">
   <div class="card-header">Team Page</div>
   <div class="card-body">

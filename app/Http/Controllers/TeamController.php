@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Team;
 
+
 class TeamController extends Controller
 {
     public function index()
@@ -17,6 +18,7 @@ class TeamController extends Controller
 
     public function create()
     {
+
         return view('teams.create');
     }
 
@@ -27,11 +29,19 @@ class TeamController extends Controller
             'name_team'=>'required',
             'number_mailer'=>'required'
         ]);
+         // teams==>providers
+        // $team->provider()->attach($request->providers);
 
-        $input = $request->all();
-        Team::create($input);
+
+            
+
+
+
+        $Provider = $request->all();
+       Team::create($Provider);
         return redirect('team')->with('flash_message', 'Team Addedd!');
     }
+
 
 
     public function show($id)
@@ -62,7 +72,7 @@ class TeamController extends Controller
         Team::destroy($id);
         return redirect('team')->with('flash_message', 'team deleted!');
     }
-    
+
     public function search(Request $request) {
        $teams= (Team::where('name_team', 'LIKE',"%{$request->search}%"))->paginate();;
        return view('teams.index',compact('teams'));
