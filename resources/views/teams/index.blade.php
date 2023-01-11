@@ -24,6 +24,7 @@
                                         <th>id</th>
                                         <th>Name_team</th>
                                         <th>Number_mailer</th>
+                                        <th>providers</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -33,6 +34,11 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->name_team }}</td>
                                         <td>{{ $item->number_mailer }}</td>
+                                        <td>
+                                            @foreach ($item->providers as $item1 )
+                                                {{$item1->id}}
+                                            @endforeach
+                                        </td>
 
                                         <td>
                                             <a href="{{ url('/team/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
@@ -54,20 +60,5 @@
             </div>
         </div>
     </div>
-    {{-- <script type="text/javascript">
-     $('#search').on('keyup',function(){
-       $value=$(this).val();
-       $.ajax({
-          type:'get',
-          url:'{{ URL::to('search') }}',
-          data:{'search:$value'},
-          success:function(data)
-          {
-             console.log(data);
-             $('#content').html(data);
-          }
-       });
-     })
-
-    </script> --}}
+   
 @endsection

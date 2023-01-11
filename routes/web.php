@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\TeamController;
  use App\Http\Controllers\ProviderController;
-//  use Illuminate\Http\Request;
 
- use App\Models\Provider;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 #############Teams##########################################
 Route::resource('/team', TeamController::class);
-// route::get('/search',[TeamController::class,'search']);
+
 Route::get('/search',[TeamController::class,'search']);
 ###############################################################
 
@@ -36,21 +36,6 @@ Route::resource('/provider', ProviderController::class);
 Route::get('/search',[ProviderController::class,'search']);
 
 
-// use App\Team;
-// Route::get('/find/{id}/team',function($id){
-//     $pro = Team::find($id)->provider;
-//     return  $pro;
-// });
+
 
 ####################################################
-
-  Route::get('find/{id}/provider' ,function($id){
-
-    $provider= Provider::with('teams')->get();
-
-      return $provider;
-
-//     $provider->teams()->attach([17]);
-    return($provider);
-
- });

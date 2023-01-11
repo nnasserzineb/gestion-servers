@@ -21,6 +21,7 @@ class ProviderController extends Controller
        $teams = Team::all();
           if($teams->count()==0){
            return redirect()->route('team.create');
+
        }
          return view('providers.create')->with('teams',$teams);
 
@@ -37,9 +38,16 @@ class ProviderController extends Controller
             'password'=>'required'
         ]);
         $input = $request->all();
-        Provider::create($input);
+        $providers =Provider::create($input);
+        foreach($request->teams as $team){
+            $providers->teams()->attach($team);
+            $providers->teams()->detach($team);
+
+
+        }
 
          return redirect('provider')->with('flash_message', 'provider Addedd!');
+
     }
 
 
@@ -74,4 +82,5 @@ class ProviderController extends Controller
         $providers= (Provider::where('name_provider', 'LIKE',"%{$request->search}%"))->paginate();;
         return view('providers.index',compact('providers'));
      }
+
 }

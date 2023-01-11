@@ -13,9 +13,9 @@
 
          <label for="exampleFormControlSelect1"> select Team</label>
         @foreach($teams as $team)
-             {{-- {{ $team['id'] }} --}}
 
-        <input type="checkbox" name="teams[]"value="17" id="">{{ $team['name_team'] }}
+
+        <input type="checkbox" name="teams[]"value="{{ $team->id }}" id="">{{ $team['name_team'] }}
 
 
        @endforeach

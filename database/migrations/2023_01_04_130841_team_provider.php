@@ -10,16 +10,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('team_provider', function (Blueprint $table) {
-            $table->increments('id');
-            $table->bigIncrements('id');
-        $table->string('team_id');
-        $table->foreign('team_id')
-              ->references('id')
-              ->on('teams')->onDelete('cascade');
-       $table->string('provider_id');
-      $table->foreign('provider_id')
-              ->references('id')
-              ->on('providers')->onDelete('cascade');
+            $table->id();
+        $table->foreignId('team_id')->constrained()->onDelet('cascade');
+      $table->foreignId('provider_id')->constrained()->onDelet('cascade');
             $table->timestamps();
         });
     }

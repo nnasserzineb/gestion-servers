@@ -26,6 +26,7 @@
                                         <th>Link</th>
                                         <th>User</th>
                                         <th>Password</th>
+                                        <th>teams</th>
                                     </tr>
                                 </thead>
 
@@ -36,6 +37,12 @@
                                         <td>{{ $item->link }}</td>
                                         <td>{{ $item->user }}</td>
                                         <td>{{ $item->password }}</td>
+                                        <td>
+                                            @foreach ($item->teams as $test )
+                                            {{ $test->name_team }}
+
+                                            @endforeach
+                                        </td>
 
 
 
@@ -52,7 +59,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        
+
                         </div>
                     </div>
                 </div>
