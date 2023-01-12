@@ -78,4 +78,8 @@ class ServeController extends Controller
         Serve::destroy($id);
         return redirect()->route('servers.index');
     }
+    public function search(Request $request) {
+        $serve= (Serve::where('server_name', 'LIKE',"%{$request->search}%"))->paginate();;
+        return view('servers.index',compact('serve'));
+    }
 }

@@ -44,6 +44,7 @@ Route::get('/search',[ProviderController::class,'search']);
 #########################Servers##################
 
 Route::resource('server',ServeController::class);
+Route::get('/search',[ServeController::class,'search']);
 
 
 

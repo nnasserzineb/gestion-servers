@@ -23,14 +23,8 @@
                                     <tr>
                                         <th>id</th>
                                         <th>server_Name</th>
-                                        <th>Status</th>
-                                        <th>IP</th>
-                                        <th>Password</th>
-                                        <th>Domain</th>
                                         <th>DueDate</th>
-                                        <th>datecreation</th>
-                                        <th>Price</th>
-                                        <th>providers</th>
+                                        <th>servers</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -39,13 +33,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->server_name }}</td>
-                                        <td>{{ $item->Status }}</td>
-                                        <td>{{ $item->IP }}</td>
-                                        <td>{{ $item->Password }}</td>
-                                        <td>{{ $item->Domain }}</td>
                                         <td>{{ $item->DueDate}}</td>
-                                        <td>{{ $item->datecreation }}</td>
-                                        <td>{{ $item->Price }}</td>
+                                       td>
                                         <td>
                                             {{ $item->provider->id }}
 
