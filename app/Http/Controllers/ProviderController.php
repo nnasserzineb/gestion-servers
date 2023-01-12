@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Provider;
 use App\Models\Team;
+
 use Illuminate\Http\Request;
 
 class ProviderController extends Controller
@@ -12,7 +13,7 @@ class ProviderController extends Controller
     public function index()
     {
         $providers = Provider::all();
-      return view ('providers.index')->with('providers', $providers);
+     return view ('providers.index')->with('providers', $providers);
     }
 
 
@@ -41,8 +42,6 @@ class ProviderController extends Controller
         $providers =Provider::create($input);
         foreach($request->teams as $team){
             $providers->teams()->attach($team);
-            $providers->teams()->detach($team);
-
 
         }
 
@@ -59,14 +58,14 @@ class ProviderController extends Controller
 
     public function edit($id)
     {
-        $provider = Provider::find($id);
-        return view('providers.edit')->with('provider', $provider);
+        $provider = Provider::findorFail($id);
+        return view('providers.edit',compact('provider'));
     }
 
 
     public function update(Request $request, $id)
     {
-        $provider = Provider::find($id);
+        $provider = Provider::findorFail($id);
         $input = $request->all();
         $provider->update($input);
         return redirect('provider')->with('flash_message', 'provider Updated!');

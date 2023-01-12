@@ -12,7 +12,7 @@
                          </div>
                     </form>
                     <div class="card-body">
-                        <a href="{{ url('/provider/create') }}" class="btn btn-success btn-sm" title="Add New Provider">
+                        <a href="{{ route('provider.create') }}" class="btn btn-success btn-sm" title="Add New Provider">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -47,11 +47,11 @@
 
 
                                         <td>
-                                            <a href="{{ url('/provider/' . $item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/provider/' . $item->id . '/edit') }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <form method="POST" action="{{ url('/provider' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
+                                            <a href="{{ route('provider.show',$item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ route('provider.edit',$item->id) }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ route('provider.destroy',$item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                               @method('DELETE')
+                                                @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>

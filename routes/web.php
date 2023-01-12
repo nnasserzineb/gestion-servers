@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DomainController;
+use App\Http\Controllers\ServeController;
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\TeamController;
  use App\Http\Controllers\ProviderController;
@@ -39,3 +41,20 @@ Route::get('/search',[ProviderController::class,'search']);
 
 
 ####################################################
+#########################Servers##################
+
+Route::resource('server',ServeController::class);
+
+
+
+
+
+
+############################################################
+################domains################################
+
+Route::resource('domain',DomainController::class);
+
+
+
+####################################################################

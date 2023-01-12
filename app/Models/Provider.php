@@ -19,4 +19,10 @@ public function teams()
 {
     return $this->belongsToMany('App\Models\Team','team_provider','team_id','provider_id');
 }
+
+    public function server()
+    {
+        return $this->hasMany(Serve::class);
+
+    }
 }

@@ -19,7 +19,7 @@ class TeamController extends Controller
     public function create()
     {
 
-        return view('teams.create');
+        return view('teams.Create');
     }
 
 
@@ -33,7 +33,7 @@ class TeamController extends Controller
         // $team->provider()->attach($request->providers);
 
 
-            
+
 
 
 

@@ -5,11 +5,11 @@
   <div class="card-header">Provider Page</div>
   <div class="card-body">
 
-      <form action="{{ url('provider') }}" method="post">
+      <form action="{{route('provider.store') }}" method="post">
         {!! csrf_field() !!}
         <label>Name_provider</label></br>
 
-        <input type="text" name="name_provider" id="name" class="form-control"></br>
+
 
          <label for="exampleFormControlSelect1"> select Team</label>
         @foreach($teams as $team)
