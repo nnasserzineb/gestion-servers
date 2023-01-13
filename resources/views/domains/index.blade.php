@@ -1,4 +1,4 @@
-@extends('servers.layout')
+@extends('domains.layout')
 @section('content') <br/>
     <div class="container p-3" style="margin: 10%">
         <div class="row">
@@ -12,7 +12,7 @@
                         </div>
                     </form>
                     <div class="card-body">
-                        <a href="{{ route('server.create') }}" class="btn btn-success btn-sm" title="Add New Contact">
+                        <a href="{{ route('domain.create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -29,22 +29,22 @@
                                     </tr>
                                 </thead>
                                 <tbody >
-                                @foreach($servers as $item)
+                                @foreach($domains as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->server_name }}</td>
+                                        <td>{{ $item->domain_name }}</td>
                                         <td>{{ $item->DueDate}}</td>
-                                       td>
+
                                         <td>
-                                            {{ $item->provider->id }}
+                                            {{ $item->server->id }}
 
 
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('server.show',$item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ route('server.edit',$item->id ) }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <form method="POST" action="{{ route('server.destroy',$item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <a href="{{ route('domain.show',$item->id) }}" title="View Student"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ route('domain.edit',$item->id ) }}" title="Edit Student"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ route('domain.destroy',$item->id) }}" accept-charset="UTF-8" style="display:inline">
                                               @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>

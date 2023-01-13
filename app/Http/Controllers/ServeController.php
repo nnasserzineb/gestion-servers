@@ -45,17 +45,21 @@ class ServeController extends Controller
     }
 
 
-    public function show(Serve $serve)
+    public function show($id)
     {
-
+        $server = Serve::findorFail($id);
+        return view('servers.show',compact('server'));
 
     }
 
 
     public function edit($id)
     {
+        $providers = Provider::all();
         $serve = Serve::findorFail($id);
-        return view('servers.edit',compact('serve'));
+        return view('servers.edit',compact('serve', 'providers'));
+
+
 
     }
 

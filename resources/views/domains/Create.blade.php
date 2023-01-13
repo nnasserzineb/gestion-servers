@@ -1,4 +1,4 @@
-@extends('servers.layout')
+@extends('domains.layout')
 @section('content')
 </br></br></br></br></br></br>
 <div class="card">

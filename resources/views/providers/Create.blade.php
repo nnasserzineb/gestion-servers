@@ -9,7 +9,7 @@
         {!! csrf_field() !!}
         <label>Name_provider</label></br>
 
-
+        <input type="text" name="name_provider" id="name" class="form-control"></br>
 
          <label for="exampleFormControlSelect1"> select Team</label>
         @foreach($teams as $team)

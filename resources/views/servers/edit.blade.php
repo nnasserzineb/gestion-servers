@@ -24,7 +24,14 @@
           <input type="date" name="server_name" id="name" value="{{$serve->datecreation}}" class="form-control"><br>
           <label>Price</label><br>
           <input type="date" name="server_name" id="name" value="{{$serve->Price}}" class="form-control"><br>
+          <select name="provider_id">
+              <option selected>slect provider</option>
+              @foreach($providers as $item)
 
+                  <option value="{{$item->id}}">{{$item->name_provider}}</option>
+
+              @endforeach
+          </select><br><br><br>
 
           <input type="submit" value="Update" class="btn btn-success"><br>
     </form>
