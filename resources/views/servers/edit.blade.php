@@ -23,7 +23,7 @@
           <label>datecreation</label><br>
           <input type="date" name="server_name" id="name" value="{{$serve->datecreation}}" class="form-control"><br>
           <label>Price</label><br>
-          <input type="date" name="server_name" id="name" value="{{$serve->Price}}" class="form-control"><br>
+          <input type="text" name="server_name" id="name" value="{{$serve->Price}}" class="form-control"><br>
           <select name="provider_id">
               <option selected>slect provider</option>
               @foreach($providers as $item)

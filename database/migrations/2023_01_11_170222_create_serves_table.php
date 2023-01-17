@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('server_name');
             $table->text('Status');
-            $table->integer('IP');
-            $table->integer('Password');
+            $table->string('IP');
+            $table->string('Password');
             $table->text('Domain');
             $table->date('DueDate');
             $table->date('datecreation');

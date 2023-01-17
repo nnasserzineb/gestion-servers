@@ -86,7 +86,7 @@ class DomainController extends Controller
     }
 
     public function search(Request $request) {
-        $domain= (Domain::where('domain_name ', 'LIKE',"%{$request->search}%"))->paginate();;
-        return view('domains.index',compact('domain'));
+        $domains= (Domain::where('domain_name ', 'LIKE',"%{$request->search}%"))->paginate();;
+        return view('domains.index',compact('domains'));
     }
 }

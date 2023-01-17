@@ -35,7 +35,7 @@
                                     </tr>
                                 </thead>
                                 <tbody >
-                                @foreach( $servers as $item)
+                                @foreach($servers as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->server_name }}</td>

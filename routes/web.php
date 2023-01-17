@@ -55,7 +55,7 @@ Route::get('/search/server',[ServeController::class,'search'])->name('search.ser
 ################domains################################
 
 Route::resource('domain',DomainController::class);
-Route::get('/search/domain',[DomainController::class,'search'])->name('search.domain');
+Route::get('/search/domaine',[DomainController::class,'search'])->name('search.domaine');
 
 
 
