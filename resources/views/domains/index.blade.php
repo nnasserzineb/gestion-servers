@@ -5,7 +5,7 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Servers</div><br>
-                    <form action="" method="GET">
+                    <form action="{{ url('/search') }}" method="GET">
                         <div class="search">
                             <input type="search" name="search" id="search" placeholder="search here .." class="form-controll">
                             <button class="btn btn-primary">search</button>
@@ -22,7 +22,7 @@
                                 <thead>
                                     <tr>
                                         <th>id</th>
-                                        <th>server_Name</th>
+                                        <th>domain_Name</th>
                                         <th>DueDate</th>
                                         <th>servers</th>
                                         <th>Actions</th>
