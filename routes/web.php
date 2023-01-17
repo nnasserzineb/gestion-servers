@@ -35,7 +35,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 #################### providers############
 Route::resource('/provider', ProviderController::class);
-Route::get('/search',[ProviderController::class,'search']);
+Route::get('/search/provider',[ProviderController::class,'search'])->name('search.provider');
 
 
 
@@ -44,7 +44,7 @@ Route::get('/search',[ProviderController::class,'search']);
 #########################Servers##################
 
 Route::resource('server',ServeController::class);
-Route::get('/search',[ServeController::class,'search']);
+Route::get('/search/server',[ServeController::class,'search'])->name('search.server');
 
 
 
@@ -55,7 +55,7 @@ Route::get('/search',[ServeController::class,'search']);
 ################domains################################
 
 Route::resource('domain',DomainController::class);
-Route::get('/search',[DomainController::class,'search']);
+Route::get('/search/domain',[DomainController::class,'search'])->name('search.domain');
 
 
 

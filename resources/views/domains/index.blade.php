@@ -5,7 +5,7 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Servers</div><br>
-                    <form action="{{ url('/search') }}" method="GET">
+                    <form action="{{ route('search.domain') }}" method="GET">
                         <div class="search">
                             <input type="search" name="search" id="search" placeholder="search here .." class="form-controll">
                             <button class="btn btn-primary">search</button>
