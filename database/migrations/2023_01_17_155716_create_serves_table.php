@@ -19,7 +19,8 @@ return new class extends Migration
             $table->text('Status');
             $table->string('IP');
             $table->string('Password');
-            $table->text('Domain');
+            $table->foreignId('domain_id')->constrained('serves')->cascadeOnDelete();
+
             $table->date('DueDate');
             $table->date('datecreation');
             $table->integer('Price');

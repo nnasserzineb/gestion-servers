@@ -13,7 +13,7 @@
           <label>DueDate</label><br>
           <input type="date" name="server_name" id="name" value="{{$domain->DueDate}}" class="form-control"><br>
 
-          <label>name_in_server</label></br>
+          <label>name_in_server</label><br>
           <select name="server_id">
           <option selected>slect servers</option>
           @foreach($servers as $item)

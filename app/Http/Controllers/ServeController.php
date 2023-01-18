@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domain;
 use App\Models\Provider;
 use App\Models\Serve;
 use Illuminate\Http\Request;
@@ -20,12 +21,13 @@ class ServeController extends Controller
 
     public function create()
     {
+        $domains = Domain::all();
         $providers = Provider::all();
         if($providers->count()==0){
             return redirect()->route('provider.create');
 
         }
-        return view('servers.create',compact('providers'));
+        return view('servers.create',compact('providers','domains'));
     }
 
 
@@ -56,9 +58,10 @@ class ServeController extends Controller
 
     public function edit($id)
     {
+        $domains = Domain::all();
         $providers = Provider::all();
         $serve = Serve::findorFail($id);
-        return view('servers.edit',compact('serve', 'providers'));
+        return view('servers.edit',compact('serve', 'providers','domains'));
 
 
 

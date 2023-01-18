@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\DomainController;
+
 use App\Http\Controllers\ServeController;
+
+use App\Http\Controllers\DomainController;
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\TeamController;
  use App\Http\Controllers\ProviderController;
@@ -60,3 +62,16 @@ Route::get('/search/domaine',[DomainController::class,'search'])->name('search.d
 
 
 ####################################################################
+
+#######################domainproviders#################
+Route::resource('domainprovider',DomainproviderController::class);
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::resource('domainprovider', DomainproviderController::class);
+});
+Route::get('/search/domainprovider',[DomainController::class,'search'])->name('search.domainprovider');
+
+
+
+#####################################################################
+

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Serve extends Model
 {
     use HasFactory;
-    protected $table='serves';
+     protected $table='serves';
     protected $primaryKey='id';
     protected $guarded = [];
 
@@ -20,6 +20,6 @@ class Serve extends Model
 
     public function domain()
     {
-        return $this->hasOne(Domain::class);
+        return $this->belongsTo(Domain::class);
     }
 }

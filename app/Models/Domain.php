@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,6 +14,10 @@ class Domain extends Model
 
     public function server()
     {
-        return $this->belongsTo(Serve::class);
+        return $this->hasOne(Serve::class);
+    }
+    public function domainprovider()
+    {
+        return $this->belongsTo(Domainprovider::class);
     }
 }

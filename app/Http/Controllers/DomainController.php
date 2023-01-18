@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Domain;
-use App\Models\Serve;
+use App\Models\Domainprovider;
 use Illuminate\Http\Request;
 
 class DomainController extends Controller
@@ -19,12 +19,8 @@ class DomainController extends Controller
 
     public function create()
     {
-        $servers = Serve::all();
-        if($servers->count()==0){
-            return redirect()->route('server.create');
-
-        }
-        return view('domains.create',compact('servers'));
+        $domainproviders= Domainprovider::all();
+        return view('domains.create',compact('domainproviders'));
 
     }
 
@@ -35,11 +31,11 @@ class DomainController extends Controller
             // 'name of data'=>$request->name get of forma,
             'domain_name'=>$request->domain_name,
             'DueDate'=>$request->DueDate,
-            'server_id'=>$request->server_id
+
 
 
         ]);
-         return redirect('domain');
+        return redirect('domain');
     }
 
 
@@ -52,9 +48,9 @@ class DomainController extends Controller
 
     public function edit($id)
     {
-        $servers = Serve::all();
+
         $domain = Domain::findorFail($id);
-        return view('domains.edit',compact('domain','servers'));
+        return view('domains.edit',compact('domain'));
 
 
 
@@ -70,7 +66,7 @@ class DomainController extends Controller
 
 
         $domain-> update(
-           $request->all()
+            $request->all()
         );
 
 
@@ -82,11 +78,12 @@ class DomainController extends Controller
     public function destroy($id)
     {
         Domain::destroy($id);
-        return redirect()->route('domains.index');
+        return redirect('domain');
     }
 
     public function search(Request $request) {
-        $domains= (Domain::where('domain_name ', 'LIKE',"%{$request->search}%"))->paginate();;
+        $domains= (Domain::where('domain_name', 'LIKE',"%{$request->search}%"))->paginate();;
         return view('domains.index',compact('domains'));
+        // return $domains;
     }
 }

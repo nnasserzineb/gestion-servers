@@ -16,7 +16,16 @@
           <label>Password</label></br>
           <input type="text" name="Password"  class="form-control"></br>
           <label>Domain</label></br>
-          <input type="text" name="Domain"  class="form-control"></br>
+          <select name="domain_id">
+              <option selected>slect domain</option>
+              @foreach($domains as $item)
+
+                  <option value="{{$item->id}}">{{$item->domain_name}}</option>
+
+              @endforeach
+          </select><br><br><br>
+
+
           <label>DueDate</label></br>
           <input type="date" name="DueDate"  class="form-control"></br>
 

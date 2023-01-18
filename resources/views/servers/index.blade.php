@@ -30,7 +30,7 @@
                                         <th>DueDate</th>
                                         <th>datecreation</th>
                                         <th>Price</th>
-                                        <th>providers</th>
+                                        <th>provider</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -42,7 +42,11 @@
                                         <td>{{ $item->Status }}</td>
                                         <td>{{ $item->IP }}</td>
                                         <td>{{ $item->Password }}</td>
-                                        <td>{{ $item->Domain }}</td>
+                                        <td>
+                                            {{ $item->domain->domain_name }}
+
+
+                                        </td>
                                         <td>{{ $item->DueDate}}</td>
                                         <td>{{ $item->datecreation }}</td>
                                         <td>{{ $item->Price }}</td>

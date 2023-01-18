@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('domains', function (Blueprint $table) {
+        Schema::create('domainproviders', function (Blueprint $table) {
             $table->id();
-            $table->string('domain_name');
-            $table->date('DueDate');
-            $table->foreignId('server_id')->constrained('servers')->cascadeOnDelete();
+            $table->string('name',50);
+            $table->string('username');
+            $table->string('password');
+
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('domains');
+        Schema::dropIfExists('domainproviders');
     }
 };
