@@ -38,10 +38,10 @@
                                         <td>{{ $item->user }}</td>
                                         <td>{{ $item->password }}</td>
                                         <td>
-                                            @foreach ($item->teams as $test )
-                                            {{ $test->name_team }}
 
-                                            @endforeach
+                                            {{ count($item->teams)}}
+
+
                                         </td>
 
 

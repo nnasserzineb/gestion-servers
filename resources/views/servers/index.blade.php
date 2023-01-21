@@ -51,7 +51,7 @@
                                         <td>{{ $item->datecreation }}</td>
                                         <td>{{ $item->Price }}</td>
                                         <td>
-                                            {{ $item->provider->id }}
+                                            {{ $item->provider->name_provider }}
 
 
                                         </td>

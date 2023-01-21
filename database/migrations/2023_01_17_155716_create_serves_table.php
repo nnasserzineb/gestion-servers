@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('server_name');
             $table->text('Status');
-            $table->string('IP');
+            $table->char('IP');
             $table->string('Password');
             $table->foreignId('domain_id')->constrained('serves')->cascadeOnDelete();
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('domain_name');
             $table->date('DueDate');
-            $table->foreignId('domainprovider_id')->constrained('domainproviders')->cascadeOnDelete();
+            $table->foreignId('domainprovider   _id')->constrained('domainproviders')->cascadeOnDelete();
             $table->timestamps();
         });
     }

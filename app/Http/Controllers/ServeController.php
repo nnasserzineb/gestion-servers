@@ -34,9 +34,10 @@ class ServeController extends Controller
     public function store(Request $request)
     {
 
-       Serve::create(
+      Serve::create(
             $request->all()
         );
+
 
         return redirect('server');
 
@@ -87,7 +88,8 @@ class ServeController extends Controller
         return redirect('server');
     }
     public function search(Request $request) {
-        $serve= (Serve::where('server_name', 'LIKE',"%{$request->search}%"))->paginate();;
-        return view('servers.index',compact('serve'));
+        $servers= (Serve::where('server_name', 'LIKE',"%{$request->search}%"))->paginate();
+        return view('servers.index',compact('servers'));
+        #return $serve;
     }
 }

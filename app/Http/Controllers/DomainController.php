@@ -31,6 +31,7 @@ class DomainController extends Controller
             // 'name of data'=>$request->name get of forma,
             'domain_name'=>$request->domain_name,
             'DueDate'=>$request->DueDate,
+            'domainprovider_id'=>$request->domainprovider_id
 
 
 

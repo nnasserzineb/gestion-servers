@@ -70,6 +70,6 @@ class DomainproviderController extends Controller
     public function search(Request $request) {
         $domainprovider= (Domainprovider::where('name', 'LIKE',"%{$request->search}%"))->paginate();;
         return view('dominproviders.index',compact('domainprovider'));
-        
+
     }
 }

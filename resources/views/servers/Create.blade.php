@@ -12,7 +12,7 @@
           <label>Status</label></br>
           <input type="text" name="Status"  class="form-control"></br>
           <label>IP</label></br>
-          <input type="number" name="IP"  class="form-control"></br>
+          <input type="text" name="IP"  class="form-control"></br>
           <label>Password</label></br>
           <input type="text" name="Password"  class="form-control"></br>
           <label>Domain</label></br>
