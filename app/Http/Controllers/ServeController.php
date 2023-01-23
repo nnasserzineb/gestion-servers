@@ -51,6 +51,7 @@ class ServeController extends Controller
 
     public function show($id)
     {
+
         $server = Serve::findorFail($id);
         return view('servers.show',compact('server'));
 

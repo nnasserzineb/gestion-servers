@@ -1,41 +1,122 @@
-@extends('teams.layout')
+
+@extends('layouts.master')
+@section('css')
+
+    @section('title')
+       Servers
+    @stop
+@endsection
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="page-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4 class="mb-0"> Edit Server</h4>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
+                    <li class="breadcrumb-item"><a href="#" class="default-color">Home</a></li>
+                    <li class="breadcrumb-item active">Page Servers</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
 @section('content')
-<div class="card">
-  <div class="card-header">Servers Edit  Page</div>
-  <div class="card-body">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12 mb-30">
+            <div class="card card-statistics h-100">
+                <div class="card-body">
+                    <div class="card-body">
 
-      <form action="{{ route('server.update',$serve->id) }}" method="post">
-    @csrf
-        @method("PUT")
+                        <thead>
 
-        <label>server_name</label><br>
-        <input type="text" name="server_name" id="name" value="{{$serve->server_name}}" class="form-control"><br>
-          <label>Status </label><br>
-          <input type="text" name="server_name" id="name" value="{{$serve->Status }}" class="form-control"><br>
-          <label>IP</label><br>
-          <input type="number" name="server_name" id="name" value="{{$serve->IP}}" class="form-control"><br>
-          <label>Password </label><br>
-          <input type="text" name="server_name" id="name" value="{{$serve->Password }}" class="form-control"><br>
-          <label>Domain</label><br>
-          <input type="text" name="server_name" id="name" value="{{$serve->Domain}}" class="form-control"><br>
-          <label>DueDate</label><br>
-          <input type="date" name="server_name" id="name" value="{{$serve->DueDate}}" class="form-control"><br>
-          <label>datecreation</label><br>
-          <input type="date" name="server_name" id="name" value="{{$serve->datecreation}}" class="form-control"><br>
-          <label>Price</label><br>
-          <input type="text" name="server_name" id="name" value="{{$serve->Price}}" class="form-control"><br>
-          <select name="provider_id">
-              <option selected>slect provider</option>
-              @foreach($providers as $item)
 
-                  <option value="{{$item->id}}">{{$item->name_provider}}</option>
+                        <form action="{{ route('server.update',$serve->id) }}" method="post">
+                            @csrf
+                            @method("PUT")
 
-              @endforeach
-          </select><br><br><br>
+                            <label>server_name</label><br>
+                            <input type="text" name="server_name" id="name" value="{{$serve->server_name}}" class="form-control"><br>
+                            <label>Status </label><br>
+                            <input type="text" name="server_name" id="name" value="{{$serve->Status }}" class="form-control"><br>
+                            <label>IP</label><br>
+                            <input type="number" name="server_name" id="name" value="{{$serve->IP}}" class="form-control"><br>
+                            <label>Password </label><br>
+                            <input type="text" name="server_name" id="name" value="{{$serve->Password }}" class="form-control"><br>
+                            <label>Domain</label><br>
+                            <select name="domain_id">
+                                <option selected>slect domain</option>
+                                @foreach( $domains as $item)
 
-          <input type="submit" value="Update" class="btn btn-success"><br>
-    </form>
+                                    <option value="{{$item->id}}">{{$item->domain_name}}</option>
 
-  </div>
-</div>
-@stop
+                                @endforeach
+                            </select><br><br><br>
+
+
+                            <label>DueDate</label><br>
+                            <input type="date" name="server_name" id="name" value="{{$serve->DueDate}}" class="form-control"><br>
+                            <label>datecreation</label><br>
+                            <input type="date" name="server_name" id="name" value="{{$serve->datecreation}}" class="form-control"><br>
+                            <label>Price</label><br>
+                            <input type="text" name="server_name" id="name" value="{{$serve->Price}}" class="form-control"><br>
+                            <select name="provider_id">
+                                <option selected>slect provider</option>
+                                @foreach($providers as $item)
+
+                                    <option value="{{$item->id}}">{{$item->name_provider}}</option>
+
+                                @endforeach
+                            </select><br><br><br>
+
+                            <input type="submit" value="Update" class="btn btn-success"><br>
+                        </form>
+
+                        </thead>
+
+
+                    </div>            </div>
+            </div>
+        </div>
+    </div>
+    <!-- row closed -->
+@endsection
+@section('js')
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
